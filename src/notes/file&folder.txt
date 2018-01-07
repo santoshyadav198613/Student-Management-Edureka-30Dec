@@ -1,0 +1,24 @@
+1. tslint.json : it will give warnings and messages in case we don't follow the best guidelines for Typescript.
+2. tsconfig.json: This is our tyepscript configuration file.
+3. protractor.conf.js: This is configuration file for e2e or automation testing.
+4. package.json: The packages which is required are marked in this file. and diffrent commands which is needed to do different actions in our Solution.
+5. package-lock.json: optional
+6. karma.conf.js : This is config file of Unit Testing.
+7. .angular-cli.json: Config file for angular CLI.
+
+
+Folder:
+1. src: Most of the code goes into this Folder
+2. node_modules: All our third party libraries are avilable here.
+3. e2e: Folder where our automation code resides.
+
+
+src:
+1. typings.d.ts: This is the type definition files.
+2. tsconfig.spec.json: Typescript cofiguration file for unit test cases.s
+3. tsconfig.app.json: Typescript configuration file for our angular components.
+4. test.ts: This file is required by karma.conf.js and loads recursively all the .spec and framework files
+5. styles.css: You can add global styles to this file.
+6. polyfills.ts: This file is to handle browser compatibily issues.
+7. index.html: This is your master page.
+8. main.ts: entry file for our angular app.

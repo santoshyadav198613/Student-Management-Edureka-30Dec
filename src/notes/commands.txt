@@ -1,0 +1,9 @@
+npm commands
+1. npm update <package_name>@latest --to take the latest version
+2. npm update <package_name>@version --to take the specific version
+3. npm install -- to install the dependncies again.
+
+Angular CLI Commands:
+1. ng new <App_name> --to create a new Angular Project
+2. npm start/ng serve -- to run our App
+3. ng g c <component> -- c is for component , g is for generate

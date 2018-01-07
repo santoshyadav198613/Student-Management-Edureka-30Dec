@@ -1,0 +1,41 @@
+Component:
+Component is something which has a class
+a HTML view
+metadata: Property and function
+
+A custom HTML tag.
+Reusable tags which we can use.
+
+@Component: decorator to denote that class is a component.
+
+properties:
+1. selector: defines your html tag.
+2. templateUrl: this will our html file for the component.
+3. styleUrls: css file for component.
+
+Services:
+
+Directives:
+
+
+Angular Module:
+Angular module will contain info about all pipes,diectives, services, components and 
+any third party library which we want to use.
+
+Our application should have one root module which should be loaded by
+bootStrap function.
+
+
+proprties:
+
+decorators:it adds some extra functionality to a class.
+
+NgModule:
+Its a decorator to denote the class is Angular Module.
+
+BrowserModule -- Requied to run our app in browser.
+proprties:
+1. declarations: in this property we need to register component, diretives and pipes.
+2. imports: to register any third party library supported by Angular.
+3. providers: This is to register angualr services.
+4. bootstrap: This is to register root component.

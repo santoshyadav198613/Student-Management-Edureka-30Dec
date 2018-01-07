@@ -1,0 +1,51 @@
+Angular
+
+1.x AngularJS
+4 - Stable
+5 - latest
+2 - 
+
+
+AngularJs and Angular  -- 2 versions of Angular
+
+Features:
+
+java - JSP
+webforms - aspx
+mvc - .cshtml
+
+
+Server Side Controls -- whenever use will request entrire page will be compiled to HTML.
+
+
+1.Rendering for any language , and bind using HTML. 
+2.Faster rendering time
+3.No server side compilation.
+4.SPA -- Single Page Applications  (MVC)
+5.Easy integration with REST API
+6.Best choice for Entrprise App
+7.Seperation of code
+8.Easy to maintain code
+9.Easy to test (Jasmine and Karma)
+10.It is a framework not a library
+ 
+
+
+Framework:
+1. Follows design patterns to solve the architecural issues
+2. Provides flexibilty so you can replace any inetrnal library with other external libraries.
+
+
+Library:
+1. Made for specific issues/ helps to achieve a single objective
+
+ 
+
+
+REST verbs
+POST
+GET
+PUT
+DELETE
+
+
