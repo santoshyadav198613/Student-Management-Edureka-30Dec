@@ -12,6 +12,8 @@ properties:
 1. selector: defines your html tag.
 2. templateUrl: this will our html file for the component.
 3. styleUrls: css file for component.
+4. template: To provide inline html.
+5. styles: to provide inline style 
 
 Services:
 

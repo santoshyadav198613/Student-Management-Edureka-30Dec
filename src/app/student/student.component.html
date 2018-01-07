@@ -1,3 +1,45 @@
 <h1>
-  Student Component
+  {{title}}
 </h1>
+
+<div [ngClass]="{ 'alert alert-danger':isVisible }">
+  {{name}}
+</div>
+
+<div [hidden]="isVisible" [innerText]="name">
+
+</div>
+
+
+<div *ngIf="isVisible" [innerText]="name">
+
+</div>
+<!-- <div *ngIf="!isVisible" [innerText]="name">
+
+</div> -->
+
+<button type="button" (click)="toggle()">Toggle</button>
+
+<input type="text" [value]="name" placeholder="Name" name="empname">
+
+{{selectedStudent|json}}
+<app-student-list [students]="studentList" (selectedStudent)="readStudent($event)"></app-student-list>
+
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'Admin'">
+    This is a Admin View
+  </div>
+
+  <div *ngSwitchCase="'Super Admin'">
+    This is a Super Admin View
+  </div>
+
+  <div *ngSwitchCase="'User'">
+    This is a User View.
+  </div>
+
+  <div *ngSwitchDefault>
+    This is default view
+  </div>
+
+</div>

@@ -28,6 +28,7 @@ Server Side Controls -- whenever use will request entrire page will be compiled 
 8.Easy to maintain code
 9.Easy to test (Jasmine and Karma)
 10.It is a framework not a library
+11. Angular has its own template engine.
  
 
 

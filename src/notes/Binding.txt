@@ -1,0 +1,9 @@
+
+By default anguar has one way data binding.
+
+1. Interpolation : we can use  {{<var_name>}} for binding data.
+2. Property Binding: we can use box "[<var_name>]" woth any valid property of
+html tag.
+3. Event Binding: we can use banana syntax for event binding, just remove
+"on" while using any javascript event. 
+

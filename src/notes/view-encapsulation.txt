@@ -1,0 +1,4 @@
+
+ViewEncapsulation.None : It will add the css class to global css
+ViewEncapsulation.Native: It will expect the components css file to provide all classes.
+ViewEncapsulation.Emulated: It will be binded withing the component itself and will override the global.

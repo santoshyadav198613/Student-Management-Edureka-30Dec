@@ -1,0 +1,5 @@
+Structured directives:
+1. *ngIf : reomves the element from DOM.
+2. *ngFor : To bind array of records
+3. ngSwitch: This is similar to swtich case statement.
+4. ngClass: apply css classes based on some business rule.

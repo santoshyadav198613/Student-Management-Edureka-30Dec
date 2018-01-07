@@ -1,0 +1,12 @@
+Component Interaction:
+
+ways:
+1. HTML
+    a. @Input : it will accept the data from parent component.
+    b. @Output : it will be used to send the data to parent component.
+2. TS
+    a.@ViewChild : This is similar to creating an instance directly into your
+        parent component.
+    b.@ViewChildren : This wil give instance of similar html tag which is placed on parent 
+        component.
+3. Services
