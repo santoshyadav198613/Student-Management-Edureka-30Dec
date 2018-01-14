@@ -10,7 +10,8 @@ import { DepartmentListComponent } from './department/department-list/department
 import { HeaderComponent } from './header/header.component';
 
 import { StudentService } from './service/student/student.service';
-
+import { LoggerService } from './service/logger/logger.service';
+import { DbloggerService } from './service/logger/dblogger.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,10 @@ import { StudentService } from './service/student/student.service';
   imports: [
     BrowserModule
   ],
-  providers: [StudentService],
+  providers: [
+    // StudentService
+    { provide: StudentService, useClass: StudentService },
+    { provide: LoggerService, useClass: DbloggerService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

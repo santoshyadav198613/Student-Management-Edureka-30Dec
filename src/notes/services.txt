@@ -8,6 +8,8 @@ What is a service:
 Types of service:
 1. Class based service
 2. Non-class based service
+a. Value Provider -- http
+b. Factory -- Routing
 
 Class-based service:
 1. create a service

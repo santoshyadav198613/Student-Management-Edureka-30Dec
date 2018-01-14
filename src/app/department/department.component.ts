@@ -3,11 +3,13 @@ import { Component, OnInit, DoCheck, ViewChild,
 
 import { DepartmentListComponent } from './department-list/department-list.component';
 
+import { DepartmentService } from '../service/department/department.service';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
+  styleUrls: ['./department.component.css'],
+  providers: [DepartmentService]
 })
 export class DepartmentComponent implements OnInit, DoCheck, AfterViewInit ,OnDestroy  {
 
