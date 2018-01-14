@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { StudentService } from './service/student/student.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  isVisible: boolean = false;
+  isVisible: boolean = false; e
+
+  constructor(private studentService: StudentService) { }
+
+  addStudent() {
+    this.studentService.addStudent();
+  }
   toggle() {
     this.isVisible = !this.isVisible;
   }

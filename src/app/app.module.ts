@@ -9,6 +9,7 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartmentListComponent } from './department/department-list/department-list.component';
 import { HeaderComponent } from './header/header.component';
 
+import { StudentService } from './service/student/student.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

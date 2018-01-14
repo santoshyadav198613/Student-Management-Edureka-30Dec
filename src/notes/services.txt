@@ -1,0 +1,26 @@
+What is a service:
+
+1. Re-usable code.
+2. Business rules
+3. to share the data.
+
+
+Types of service:
+1. Class based service
+2. Non-class based service
+
+Class-based service:
+1. create a service
+2. register the service
+3. inject the service
+
+DI: 
+Dependency Injection: Angular has DI already built-in, we can use consturctor injection.
+
+Singleton Vs Non-Singleton:
+
+only one instance of service will be available for entire service.
+
+1. When we register a service using module the service is singleton.
+2.  we can register the service with component, so it won't be available for 
+other component,but it will be available for its child component.

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 
-import { Student } from '../student';
+import { Student } from '../../service/student/student';
 
 @Component({
   selector: 'app-student-list',

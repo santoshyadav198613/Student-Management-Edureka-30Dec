@@ -7,3 +7,4 @@ Angular CLI Commands:
 1. ng new <App_name> --to create a new Angular Project
 2. npm start/ng serve -- to run our App
 3. ng g c <component> -- c is for component , g is for generate
+4. ng g service <service> -- to create a class based service.
