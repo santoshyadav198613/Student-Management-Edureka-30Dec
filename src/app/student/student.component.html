@@ -1,6 +1,11 @@
-<h1>
+<!-- <h1>
   {{title}}
-</h1>
+</h1> -->
+<app-header>
+  <div #header>
+    {{title}}
+  </div>
+</app-header>
 
 <div [ngClass]="{ 'alert alert-danger':isVisible }">
   {{name}}
@@ -20,9 +25,7 @@
 
 <button type="button" (click)="toggle()">Toggle</button>
 
-<input type="text" [value]="name" placeholder="Name" name="empname">
-
-{{selectedStudent|json}}
+<input type="text" [value]="name" placeholder="Name" name="empname"> {{selectedStudent|json}}
 <app-student-list [students]="studentList" (selectedStudent)="readStudent($event)"></app-student-list>
 
 <div [ngSwitch]="role">

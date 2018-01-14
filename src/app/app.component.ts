@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  isVisible: boolean = false;
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, DoCheck, ViewChild, 
+  AfterViewInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 
 import { DepartmentListComponent } from './department-list/department-list.component';
 
@@ -8,7 +9,7 @@ import { DepartmentListComponent } from './department-list/department-list.compo
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.css']
 })
-export class DepartmentComponent implements OnInit {
+export class DepartmentComponent implements OnInit, DoCheck, AfterViewInit ,OnDestroy  {
 
   @ViewChild(DepartmentListComponent)
   departmentList: DepartmentListComponent;
@@ -19,8 +20,23 @@ export class DepartmentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.departmentList.title = 'Marketing';
+    console.log(this.departmentsListComponent);
   }
+
+  ngAfterViewInit(): void {
+    console.log('This is after view init');
+    this.departmentsListComponent.forEach(
+      (departmentListComponent) => {
+        setTimeout(() => departmentListComponent.title = "IT", 0)
+      }
+    )
+  }
+
+  ngDoCheck(): void {
+    console.log('this is do check event');
+  }
+
 
   setDepartment() {
     this.departmentList.title = 'Marketing';
@@ -31,6 +47,10 @@ export class DepartmentComponent implements OnInit {
       }
     )
     // this.departmentList.isValid();
+  }
+
+  ngOnDestroy(): void{
+    alert('Are you sure you want to close deaprtment tab');
   }
 
 

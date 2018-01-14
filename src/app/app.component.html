@@ -7,4 +7,8 @@
 <app-student></app-student>
 
 <hr>
-<app-department></app-department>
+<div *ngIf="isVisible">
+    <app-department></app-department>
+</div>
+
+<button type="button" (click)="toggle()">Toggle</button>

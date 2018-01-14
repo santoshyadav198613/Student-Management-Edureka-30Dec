@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input, Output, EventEmitter } from '@angular/core';
 
 import { Student } from '../student';
 
@@ -7,11 +7,14 @@ import { Student } from '../student';
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements OnInit {
+export class StudentListComponent implements OnInit, OnChanges {
   @Input() students: Student[];
   @Output() selectedStudent: EventEmitter<Student> = new EventEmitter<Student>();
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(changes);
+  }
   ngOnInit() {
   }
 

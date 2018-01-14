@@ -1,0 +1,9 @@
+1. constructor: this event for initialization, do not write haeavy code in this event.
+2. ngOnInit: this is the event where we can load the data from backend.
+3. ngDoCheck: this will be called after init and after any event is fired.
+4. ngOnChanges: Capture the oldValue and newValue on Input properties. Should not be 
+implemented with ngDoCheck.
+5. ngAfterViewInit: To access the components after they are initalized inside your parent component.
+6. ngAfterContentInit: to access the contents within componets once they are initialized.
+7. ngOnDestroy : this is last event in component lifecycle, and we can use this to release memory by destroying objects.
+or we can use this for special scenarios where user has unsaved changes on view and tries to navigate to another view. 
