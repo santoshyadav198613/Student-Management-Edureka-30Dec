@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
@@ -22,7 +23,8 @@ import { DbloggerService } from './service/logger/dblogger.service';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     // StudentService

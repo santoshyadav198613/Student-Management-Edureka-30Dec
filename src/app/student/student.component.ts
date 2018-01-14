@@ -20,6 +20,7 @@ export class StudentComponent implements OnInit {
   name: string = 'Kapil';
   isVisible: boolean = false;
   role: string = 'Demo User';
+  student: Student = new Student();
   selectedStudent: Student = new Student();
   // studentService: StudentService = new StudentService();
   studentList: Student[] = [];

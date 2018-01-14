@@ -1,0 +1,11 @@
+Why  to use Forms:
+1. collect use inputs.
+
+Types for Forms:
+1. Template Driven Forms
+2. Reactive Forms
+
+Template Driven Forms:
+1. import {FormsModule} from '@angular/forms'
+2. add into imports array
+3. 
