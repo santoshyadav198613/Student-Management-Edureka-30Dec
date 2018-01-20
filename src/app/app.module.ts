@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { StudentComponent } from './student/student.component';
@@ -14,6 +15,8 @@ import { StudentService } from './service/student/student.service';
 import { LoggerService } from './service/logger/logger.service';
 import { DbloggerService } from './service/logger/dblogger.service';
 import { CustomerComponent } from './customer/customer.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostsListComponent } from './posts/posts-list/posts-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,12 +25,15 @@ import { CustomerComponent } from './customer/customer.component';
     DepartmentComponent,
     DepartmentListComponent,
     HeaderComponent,
-    CustomerComponent
+    CustomerComponent,
+    PostsComponent,
+    PostsListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     // StudentService

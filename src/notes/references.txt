@@ -3,3 +3,6 @@ https://augury.angular.io/pages/guides/
 
 Boootstrap Css:
 http://getbootstrap.com/docs/3.3/css/ 
+
+Fake REST API:
+https://jsonplaceholder.typicode.com

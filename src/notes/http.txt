@@ -1,0 +1,14 @@
+Java -> Sprint Boot
+.net -> Web API
+node -> express
+
+Verbs:
+1. get
+2. post
+3. put
+4. delete
+5. options
+6. JSONP
+
+
+https://jsonplaceholder.typicode.com/posts
