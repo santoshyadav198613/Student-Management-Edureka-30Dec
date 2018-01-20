@@ -9,3 +9,21 @@ Template Driven Forms:
 1. import {FormsModule} from '@angular/forms'
 2. add into imports array
 3. 
+
+
+HTML5 validations:
+1.required
+2.min  -- doesn't work
+3.max  --  doesn't work
+4.email -- doesn't work
+5.minLength
+6.maxLength
+7.pattern
+
+
+properties:
+
+invalid - to check if value in control/form is invalid.
+valid - to check if value in control/form is valid.
+dirty - there are changes on forms.
+pristine - form state is fesh and no user changes done on form.

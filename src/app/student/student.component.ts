@@ -12,7 +12,7 @@ import { Student } from '../service/student/student';
   //       `,
   styleUrls: ['./student.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-  providers : [StudentService]
+  providers: [StudentService]
   // styles: ['h1 { background-color: red  }']
 })
 export class StudentComponent implements OnInit {
@@ -21,9 +21,11 @@ export class StudentComponent implements OnInit {
   isVisible: boolean = false;
   role: string = 'Demo User';
   student: Student = new Student();
+  emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$';
   selectedStudent: Student = new Student();
   // studentService: StudentService = new StudentService();
   studentList: Student[] = [];
+  isSubmitted: boolean = false;
   // studentList: Student[] = [
   //   { id: 1, name: 'Sudeep', dob: new Date('31-Jan-1987') },
   //   { id: 2, name: 'Srinivas', dob: new Date('31-Jan-1987') },
@@ -34,7 +36,12 @@ export class StudentComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
+    this.loadStudent();
+  }
+
+  loadStudent(): Student[] {
     this.studentList = this.studentService.getStudents();
+    return this.studentList;
   }
 
 
@@ -44,5 +51,13 @@ export class StudentComponent implements OnInit {
 
   readStudent(student: Student) {
     this.selectedStudent = student;
+  }
+
+  save(studentForm): void {
+    this.isSubmitted = true;
+    console.log(this.student);
+    this.studentService.addStud(this.student);
+    this.loadStudent();
+    studentForm.reset();
   }
 }

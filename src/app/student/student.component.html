@@ -28,18 +28,32 @@
 <input type="text" [value]="name" placeholder="Name" name="empname"> {{selectedStudent|json}}
 
 {{student| json}}
-<form>
+{{studentForm.invalid | json}}
+{{studentForm.valid | json}}
+{{studentForm.dirty | json}}
+{{studentForm.value | json}}
+{{studentForm.pristine | json}}
+<div *ngIf="isSubmitted" class="alert alert-success">
+  Form saved successfully!
+</div>
+<form #studentForm="ngForm" (submit)="save(studentForm)">
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="student.id" name="id" type="number" placeholder="Student Id">
+    <input #sid="ngModel" required class="form-control" [(ngModel)]="student.id" name="id" type="number" placeholder="Student Id">
+    <div *ngIf="sid.dirty && sid.invalid " class="alert alert-danger">
+        Please provide student id!
+    </div>
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="student.name" name="name" type="text" placeholder="Student Name">
+    <input required minlength="4" maxlength="8" class="form-control" [(ngModel)]="student.name" name="name" type="text" placeholder="Student Name">
   </div>
   <div class="form-group">
-    <input class="form-control" [(ngModel)]="student.dob" name="dob" type="date" placeholder="Student DOB">
+    <input required [pattern]="emailRegex" class="form-control" [(ngModel)]="student.email" name="email" type="text" placeholder="Student Email">
+  </div>
+  <div class="form-group">
+    <input required class="form-control" [(ngModel)]="student.dob" name="dob" type="datetime" placeholder="Student DOB">
   </div>
   <div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button [disabled]="studentForm.invalid" type="submit" class="btn btn-primary">Save</button>
   </div>
 </form>
 
