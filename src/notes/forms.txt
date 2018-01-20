@@ -27,3 +27,18 @@ invalid - to check if value in control/form is invalid.
 valid - to check if value in control/form is valid.
 dirty - there are changes on forms.
 pristine - form state is fesh and no user changes done on form.
+
+
+Reactive Forms:
+1. we create form in typescript.
+2. generally preferred for complex forms.
+3. it gives more control to ts developer.
+
+steps:
+1. import ReactiveFormsModule
+2. add to imports array
+
+
+FormGroup : Gives us an instance of html forms.
+FormBuilder: service which will help us to add controle inside form.
+FormControl: create a new control.

@@ -58,6 +58,7 @@ export class StudentComponent implements OnInit {
     console.log(this.student);
     this.studentService.addStud(this.student);
     this.loadStudent();
+    this.student = new Student();
     studentForm.reset();
   }
 }

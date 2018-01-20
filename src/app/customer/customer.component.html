@@ -1,0 +1,94 @@
+<p>
+  customer works!
+</p>
+
+{{customerForm.invalid | json}} {{customerForm.pristine | json}} {{customerForm.value |json}}
+
+<form [formGroup]="customerForm" (submit)="save()">
+  <div class="form-group">
+    <input type="number" formControlName="id" name="custid" class="form-control" placeholder="Customer Id">
+    {{customerForm.get('id').invalid | json }}
+    {{customerForm.get('id').valid | json }}
+    {{customerForm.get('id').pristine | json }}
+    {{customerForm.get('id').dirty | json }}
+    <div class="alert alert-danger" *ngIf="customerForm.get('id').invalid && customerForm.get('id').dirty">
+        Please provide customer id!
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" formControlName="name" name="custname" class="form-control" placeholder="Customer Name">
+  </div>
+  <div class="form-group">
+    <input type="email" formControlName="email" name="custemail" class="form-control" placeholder="Customer Email">
+  </div>
+  <div class="form-group">
+    <input type="date" formControlName="dob" name="custdob" class="form-control" placeholder="Customer DOB">
+  </div>
+  <div class="form-group">
+    <input type="text" formControlName="pan" name="custpan" class="form-control" placeholder="Customer PAN">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input type="text" formControlName="addressLine1" name="addr1" class="form-control" placeholder="Address Line1">
+    </div>
+    {{customerForm.get('address.addressLine1').invalid | json }}
+    {{customerForm.get('address.addressLine1').valid | json }}
+    {{customerForm.get('address.addressLine1').pristine | json }}
+    {{customerForm.get('address.addressLine1').dirty | json }}
+    <div class="alert alert-danger" *ngIf="customerForm.get('address.addressLine1').invalid && customerForm.get('address.addressLine1').dirty">
+        Please provide customer Address!
+    </div>
+    <div class="form-group">
+      <input type="text" formControlName="addressLine2" name="addr2" class="form-control" placeholder="Address Line2">
+    </div>
+    <div class="form-group">
+      <input type="text" formControlName="city" name="city" class="form-control" placeholder="City">
+    </div>
+
+    <div class="form-group">
+      <input type="text" formControlName="pin" name="pin" class="form-control" placeholder="Pin">
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="button" class="btn btn-success" (click)="addCard()">
+      Add Card
+    </button>
+  </div>
+  <div class="form-group" formArrayName="cards">
+    <div *ngFor="let card of customerForm['controls'].cards['controls'];let i=index">
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <input type="number" formControlName="cardNumber" name="cardno" class="form-control" placeholder="Card Number">
+        </div>
+        <!-- {{customerForm.get(['cardNumber', i ,'cards']).invalid | json }}
+        {{customerForm.get([i,'cardNumber','cards']).valid | json }}
+        {{customerForm.get([i,'cardNumber','cards']).pristine | json }}
+        {{customerForm.get([i,'cardNumber','cards']).dirty | json }}
+        <!-- <div class="alert alert-danger" *ngIf="customerForm.get(['i','cardNumber','cards']).invalid && customerForm.get(['i','cardNumber','cards']).dirty"> -->
+            <!-- Please provide customer Address!
+        </div> --> 
+        <div class="form-group">
+          <input type="number" formControlName="expMonth" name="month" class="form-control" placeholder="Expiry Month">
+        </div>
+        <div class="form-group">
+          <input type="number" formControlName="expYear" name="year" class="form-control" placeholder="Expiry year">
+        </div>
+        <div>
+          <button type="button" class="btn btn-danger" (click)="removeCard(i)">
+            Remove Card
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div>
+    <button [disabled]="customerForm.invalid" type="submit" class="btn btn-success">Save</button>
+  </div>
+
+</form>
