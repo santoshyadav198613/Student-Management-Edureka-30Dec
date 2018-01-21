@@ -9,7 +9,8 @@
       <th>Id</th>
       <th>Name</th>
       <th>Date Of Birth</th>
-      <th>Details</th>
+      <th>Send Info</th>
+      <th>View Details</th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +20,9 @@
       <td>{{student.dob}}</td>
       <td>
         <button type="button" class="btn btn-success" (click)="select(student)">Send Selected Student</button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-success" [routerLink]="[student.id]">Details</button>
       </td>
     </tr>
   </tbody>

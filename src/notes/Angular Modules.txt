@@ -1,0 +1,5 @@
+Types:
+1. Routing Module - This only hold routing configuration
+2. Feature Module -  we can club services/directives/component/routing into a single module in case they are related to similar feature.
+3. Shared Moule - we can club services/directives/component/modules into same module,
+if they will be used in multiple modules.
