@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
+import { ApiinterceptorService } from './httpinterceptor/apiinterceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,13 +45,14 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
       { path: 'department', component: DepartmentComponent },
       { path: 'student', component: StudentComponent },
       { path: '', redirectTo: 'posts', pathMatch: 'full' },
-      { path: '**', component : PagenotfoundComponent }
+      { path: '**', component: PagenotfoundComponent }
     ])
   ],
   providers: [
     // StudentService
     { provide: StudentService, useClass: StudentService },
-    { provide: LoggerService, useClass: DbloggerService }],
+    { provide: LoggerService, useClass: DbloggerService },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
