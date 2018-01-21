@@ -1,13 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<app-posts></app-posts>
+<div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Welcome to {{ title }}!</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="posts">Posts</a>
+        </li>
+        <li>
+          <a routerLink="customer">Customer</a>
+        </li>
+        <li>
+          <a routerLink="department">Department</a>
+        </li>
+        <li>
+            <a routerLink="student">Student</a>
+          </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- <app-posts></app-posts>
 <app-customer></app-customer>
-<app-student></app-student>
-<button type="button" class="btn btn-success" (click)="addStudent()">
+<app-student></app-student> -->
+  <!-- <button type="button" class="btn btn-success" (click)="addStudent()">
   Add Student
 </button>
 
@@ -16,4 +44,6 @@
     <app-department></app-department>
 </div>
 
-<button type="button" (click)="toggle()">Toggle</button>
+<button type="button" (click)="toggle()">Toggle</button> -->
+  <router-outlet></router-outlet>
+</div>

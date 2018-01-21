@@ -1,0 +1,5 @@
+
+steps:
+1. import { RouterModule } from '@angular/router';
+2. add to imports array and provide config using forRoot method.
+3. place  <router-outlet></router-outlet> on root component
