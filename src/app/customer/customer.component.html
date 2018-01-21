@@ -6,13 +6,10 @@
 
 <form [formGroup]="customerForm" (submit)="save()">
   <div class="form-group">
-    <input type="number" formControlName="id" name="custid" class="form-control" placeholder="Customer Id">
-    {{customerForm.get('id').invalid | json }}
-    {{customerForm.get('id').valid | json }}
-    {{customerForm.get('id').pristine | json }}
-    {{customerForm.get('id').dirty | json }}
+    <input type="number" formControlName="id" name="custid" class="form-control" placeholder="Customer Id"> {{customerForm.get('id').invalid | json }} {{customerForm.get('id').valid | json }} {{customerForm.get('id').pristine
+    | json }} {{customerForm.get('id').dirty | json }}
     <div class="alert alert-danger" *ngIf="customerForm.get('id').invalid && customerForm.get('id').dirty">
-        Please provide customer id!
+      Please provide customer id!
     </div>
   </div>
   <div class="form-group">
@@ -31,12 +28,10 @@
     <div class="form-group">
       <input type="text" formControlName="addressLine1" name="addr1" class="form-control" placeholder="Address Line1">
     </div>
-    {{customerForm.get('address.addressLine1').invalid | json }}
-    {{customerForm.get('address.addressLine1').valid | json }}
-    {{customerForm.get('address.addressLine1').pristine | json }}
-    {{customerForm.get('address.addressLine1').dirty | json }}
+    {{customerForm.get('address.addressLine1').invalid | json }} {{customerForm.get('address.addressLine1').valid | json }} {{customerForm.get('address.addressLine1').pristine
+    | json }} {{customerForm.get('address.addressLine1').dirty | json }}
     <div class="alert alert-danger" *ngIf="customerForm.get('address.addressLine1').invalid && customerForm.get('address.addressLine1').dirty">
-        Please provide customer Address!
+      Please provide customer Address!
     </div>
     <div class="form-group">
       <input type="text" formControlName="addressLine2" name="addr2" class="form-control" placeholder="Address Line2">
@@ -60,13 +55,14 @@
         <div class="form-group">
           <input type="number" formControlName="cardNumber" name="cardno" class="form-control" placeholder="Card Number">
         </div>
-        <!-- {{customerForm.get(['cardNumber', i ,'cards']).invalid | json }}
-        {{customerForm.get([i,'cardNumber','cards']).valid | json }}
-        {{customerForm.get([i,'cardNumber','cards']).pristine | json }}
-        {{customerForm.get([i,'cardNumber','cards']).dirty | json }}
-        <!-- <div class="alert alert-danger" *ngIf="customerForm.get(['i','cardNumber','cards']).invalid && customerForm.get(['i','cardNumber','cards']).dirty"> -->
-            <!-- Please provide customer Address!
-        </div> --> 
+        {{customerForm.get(["cards", i ,"cardNumber"]).invalid | json }}
+        {{customerForm.get(["cards", i ,"cardNumber"]).valid | json }}
+        {{customerForm.get(["cards", i ,"cardNumber"]).pristine | json }}
+        {{customerForm.get(["cards", i ,"cardNumber"]).dirty | json }}
+     
+        <div class="alert alert-danger">
+         Please provide customer Address!
+        </div>
         <div class="form-group">
           <input type="number" formControlName="expMonth" name="month" class="form-control" placeholder="Expiry Month">
         </div>

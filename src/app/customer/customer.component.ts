@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
 
+import { CustomValidation } from '../custom/customvalidation';
+
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -33,7 +35,7 @@ export class CustomerComponent implements OnInit {
 
   buildForm() {
     return this.fb.group({
-      cardNumber: new FormControl('', [Validators.required]),
+      cardNumber: new FormControl('', [Validators.required, CustomValidation.cardValidator]),
       expMonth: new FormControl('', [Validators.required]),
       expYear: new FormControl('', [Validators.required]),
     })
@@ -53,8 +55,8 @@ export class CustomerComponent implements OnInit {
 
 
   save() {
-      console.log(this.customerForm.value);
-      this.customerForm.reset();
+    console.log(this.customerForm.value);
+    this.customerForm.reset();
   }
 
 }

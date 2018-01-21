@@ -12,3 +12,13 @@ Verbs:
 
 
 https://jsonplaceholder.typicode.com/posts
+
+
+rxjs : its a library which provides us the observable features.
+
+It uses pub/sub design pattern.
+
+Observable: we can use download the data in streams.
+
+streams:
+

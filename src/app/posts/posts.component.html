@@ -1,5 +1,21 @@
-<p>
-  posts works!
-</p>
+<h1>
+  Add Posts
+</h1>
+
+<form #postsForm="ngForm" (submit)="addPosts();postsForm.reset()">
+  <div class="form-group">
+    <input required type="number" class="form-control" [(ngModel)]="posts.userId" name="userid" placeholder="User ID">
+  </div>
+  <div class="form-group">
+    <input required type="text" class="form-control" [(ngModel)]="posts.title" name="title" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <input required type="text" class="form-control" [(ngModel)]="posts.body" name="body" placeholder="Body">
+  </div>
+  <div>
+    <button [disabled]="postsForm.invalid" type="submit" class="btn btn-primary">Add Posts</button>
+  </div>
+</form>
+
 
 <app-posts-list></app-posts-list>
