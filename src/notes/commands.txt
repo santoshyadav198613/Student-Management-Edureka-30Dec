@@ -11,3 +11,4 @@ Angular CLI Commands:
 5. ng g module <module_name> -- to create an angular module
 6. ng g guard <guard_name> -- creates a new guard
 7. ng g pipe <pipe_name> -- create a new pipe
+8. ng g directive <directive_name> --creates a new directive

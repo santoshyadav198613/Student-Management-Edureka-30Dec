@@ -1,0 +1,5 @@
+Types of directives:
+1. component
+2. structured
+3. attribute
+

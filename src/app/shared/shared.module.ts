@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NamePipe } from '../custom/name.pipe';
 import { HeaderComponent } from '../header/header.component';
 import { EmployeeSearchPipe } from '../custom/employee-search.pipe';
+import { HoverDirective } from '../directive/hover.directive';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { EmployeeSearchPipe } from '../custom/employee-search.pipe';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  declarations: [HeaderComponent,NamePipe,EmployeeSearchPipe],
+  declarations: [HeaderComponent,NamePipe,EmployeeSearchPipe,HoverDirective],
   exports: [
     CommonModule,
     FormsModule,
@@ -23,7 +24,8 @@ import { EmployeeSearchPipe } from '../custom/employee-search.pipe';
     HttpClientModule,
     HeaderComponent,
     NamePipe,
-    EmployeeSearchPipe
+    EmployeeSearchPipe,
+    HoverDirective
   ]
 })
 export class SharedModule { }

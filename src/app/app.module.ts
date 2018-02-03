@@ -30,6 +30,7 @@ import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/auth/auth.guard';
 import { PostResolveGuard } from './service/posts/post-resolve.guard';
 import { PostService } from './service/posts/post.service';
+import { PasswordValidatorDirective } from './directive/password-validator.directive';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PostService } from './service/posts/post.service';
     PostsComponent,
     PostsListComponent,
     PagenotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    PasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
