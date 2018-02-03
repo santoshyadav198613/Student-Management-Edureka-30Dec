@@ -30,6 +30,7 @@ import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/auth/auth.guard';
 import { PostResolveGuard } from './service/posts/post-resolve.guard';
 import { PostService } from './service/posts/post.service';
+
 @NgModule({
   declarations: [
     AppComponent,

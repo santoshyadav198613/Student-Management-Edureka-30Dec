@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { NamePipe } from '../custom/name.pipe';
 import { HeaderComponent } from '../header/header.component';
+import { EmployeeSearchPipe } from '../custom/employee-search.pipe';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,13 +15,15 @@ import { HeaderComponent } from '../header/header.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent,NamePipe,EmployeeSearchPipe],
   exports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HeaderComponent
+    HeaderComponent,
+    NamePipe,
+    EmployeeSearchPipe
   ]
 })
 export class SharedModule { }

@@ -10,3 +10,4 @@ Angular CLI Commands:
 4. ng g service <service> -- to create a class based service.
 5. ng g module <module_name> -- to create an angular module
 6. ng g guard <guard_name> -- creates a new guard
+7. ng g pipe <pipe_name> -- create a new pipe

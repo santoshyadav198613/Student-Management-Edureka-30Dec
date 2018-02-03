@@ -1,0 +1,11 @@
+Pipes:
+
+Pipes are used to trasform your data.
+
+1. json
+2. currency
+3. uppercase
+4. lowercase
+5. date
+6. percent
+

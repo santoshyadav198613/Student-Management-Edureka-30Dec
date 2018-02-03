@@ -3,6 +3,7 @@
 </h1>
 {{students | json}}
 
+<input type="number" [(ngModel)]="empid" name="empid" placeholder="Employee Id" class="form-control">
 <table class="table">
   <thead>
     <tr>
@@ -14,10 +15,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let student of students">
-      <td>{{student.id}}</td>
-      <td> {{student.name}} </td>
-      <td>{{student.dob}}</td>
+    <tr *ngFor="let student of students | employeeSearch : empid">
+      <td>{{student.id | currency : 'INR'}}</td>
+      <td> {{student.name | name}} </td>
+      <td>{{student.dob | date : 'dd-MMM-yyyy' }}</td>
       <td>
         <button type="button" class="btn btn-success" (click)="select(student)">Send Selected Student</button>
       </td>

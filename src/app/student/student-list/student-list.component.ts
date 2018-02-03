@@ -9,11 +9,12 @@ import { Student } from '../../service/student/student';
 })
 export class StudentListComponent implements OnInit, OnChanges {
   @Input() students: Student[];
+  empid: number = 0;
   @Output() selectedStudent: EventEmitter<Student> = new EventEmitter<Student>();
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-      console.log(changes);
+    console.log(changes);
   }
   ngOnInit() {
   }
