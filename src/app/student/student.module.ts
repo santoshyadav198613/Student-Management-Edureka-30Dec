@@ -9,13 +9,19 @@ import { SharedModule } from '../shared/shared.module';
 
 import { StudentService } from '../service/student/student.service';
 import { StudentDetailsComponent } from './student-details/student-details.component';
-
+import { AuthGuard } from '../service/auth/auth.guard';
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild([
-      { path: 'student', component: StudentComponent },
-      { path: 'student/:id', component: StudentDetailsComponent }
+      {
+        path: 'student', component: StudentComponent, canActivate: [AuthGuard],
+        canActivateChild : [AuthGuard],
+        children: [
+          { path: ':id', component: StudentDetailsComponent }
+        ]
+      },
+
     ])
   ],
   declarations: [StudentComponent,

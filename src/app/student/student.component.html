@@ -60,6 +60,7 @@
 
 <app-student-list [students]="studentList" (selectedStudent)="readStudent($event)"></app-student-list>
 
+<router-outlet></router-outlet>
 <div [ngSwitch]="role">
   <div *ngSwitchCase="'Admin'">
     This is a Admin View

@@ -5,7 +5,7 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Welcome to {{ title }}!</a>
       </div>
-      <ul class="nav navbar-nav">
+      <ul *ngIf="loginService.isLoggedIn" class="nav navbar-nav">
         <li>
           <a routerLink="posts">Posts</a>
         </li>

@@ -24,6 +24,10 @@ import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { ApiinterceptorService } from './httpinterceptor/apiinterceptor.service';
+import { LoginComponent } from './login/login.component';
+
+import { LoginService } from './service/login/login.service';
+import { AuthGuard } from './service/auth/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,8 @@ import { ApiinterceptorService } from './httpinterceptor/apiinterceptor.service'
     CustomerComponent,
     PostsComponent,
     PostsListComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +63,7 @@ import { ApiinterceptorService } from './httpinterceptor/apiinterceptor.service'
     // StudentService
     // { provide: StudentService, useClass: StudentService },
     { provide: LoggerService, useClass: DbloggerService },
+    LoginService,AuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
