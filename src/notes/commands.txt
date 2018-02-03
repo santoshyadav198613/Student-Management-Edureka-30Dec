@@ -12,3 +12,9 @@ Angular CLI Commands:
 6. ng g guard <guard_name> -- creates a new guard
 7. ng g pipe <pipe_name> -- create a new pipe
 8. ng g directive <directive_name> --creates a new directive
+9. npm run build -- this is to create a development build
+10. ng build --prod  : creates production build.
+11. npm run test -- to run unit test cases
+12. npm run e2e -- to run automation test cases
+13: npm run lint -- to display all linting errors
+
