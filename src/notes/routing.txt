@@ -11,5 +11,16 @@ Guards:
 To restrict the access to URLs
 
 1. canActivate: to check if user has the access to URL.
-2. canActivateChild : 
+2. canActivateChild : to check if user is authenticated to access child routes.
+3. canDeActivate:
+4. canDeActivateChild:
+5. resolve: prefetch our data. should be applied to master data.
+6. canLoad : To restrict loading for lazy loaded module. 
 
+
+Lazy Loading:
+
+pre-requisite:
+1. It should be least used module.
+2. The module sould not share anything with other modules.
+3. It should not have any value for path in its own module.

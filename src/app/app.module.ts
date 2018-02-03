@@ -28,6 +28,8 @@ import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/auth/auth.guard';
+import { PostResolveGuard } from './service/posts/post-resolve.guard';
+import { PostService } from './service/posts/post.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,7 @@ import { AuthGuard } from './service/auth/auth.guard';
     // ReactiveFormsModule,
     // HttpClientModule,
     SharedModule,
-    StudentModule,
+    // StudentModule,
     RoutingModule
     // RouterModule.forRoot([
     //   { path: 'posts', component: PostsComponent },
@@ -63,7 +65,7 @@ import { AuthGuard } from './service/auth/auth.guard';
     // StudentService
     // { provide: StudentService, useClass: StudentService },
     { provide: LoggerService, useClass: DbloggerService },
-    LoginService,AuthGuard,
+    LoginService, AuthGuard, PostResolveGuard, PostService,
     { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

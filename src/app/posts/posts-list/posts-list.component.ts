@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../service/posts/post.service';
 import { Posts } from '../../service/posts/posts';
 import { HttpEventType } from '@angular/common/http';
+
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-posts-list',
   templateUrl: './posts-list.component.html',
@@ -10,14 +13,20 @@ import { HttpEventType } from '@angular/common/http';
 })
 export class PostsListComponent implements OnInit {
   postsList: Posts[];
-  dataSize : number = 0;
-  constructor(private postsService: PostService) { }
+  dataSize: number = 0;
+  constructor(private postsService: PostService,
+    private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.postsService.getPosts().subscribe(
-      (res) => this.postsList = res,
-      (err) => console.log(err)
-    );
+    // this.postsService.getPosts().subscribe(
+    //   (res) => this.postsList = res,
+    //   (err) => console.log(err)
+    // );
+
+
+    this.router.data.subscribe(
+      (data) => this.postsList = data['postList']
+    )
 
     this.postsService.getPhotos().subscribe(
       (event) => {
