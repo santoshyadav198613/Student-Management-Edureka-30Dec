@@ -17,3 +17,7 @@ https://material.angular.io
 
 Angular Material Repo:
 https://github.com/angular/material2
+
+
+Export Excel:
+https://github.com/luwojtaszek/ngx-excel-export/tree/xlsx-style
