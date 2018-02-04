@@ -36,6 +36,8 @@ import { VALUE_CONFIG, VALUE_CONSTANTS } from './service/valueprovider/valueprov
 
 import { postFactory } from './service/posts/post-service-factory';
 
+// import {AuthGuard,postFactory, } from './service'
+
 @NgModule({
   declarations: [
     AppComponent,
