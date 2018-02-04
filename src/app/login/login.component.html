@@ -6,16 +6,24 @@
   {{errorMessage}}
 </div>
 <form class="col-md-6" #loginForm="ngForm" (submit)="login();loginForm.reset()">
-  <div class="form-group">
-    <input appHover required class="form-control" [(ngModel)]="user.userName" type="text" name="username" placeholder="User Name">
-  </div>
-  <div class="form-group">
-    <input appPasswordValidator appHover required #password="ngModel" class="form-control" [(ngModel)]="user.password" type="password"
+  <mat-form-field>
+    <input appHover matInput required   [(ngModel)]="user.userName" type="text" name="username" placeholder="User Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input appPasswordValidator appHover required #password="ngModel"  matInput [(ngModel)]="user.password" type="password"
       name="password" placeholder="Password">
-
-      {{password.errors | json}}
-  </div>
+    </mat-form-field>
   <div>
-    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+    <button [disabled]="loginForm.invalid" type="submit" mat-raised-button color="primary">Login</button>
   </div>
+</form>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
 </form>

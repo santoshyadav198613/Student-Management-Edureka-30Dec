@@ -17,4 +17,6 @@ Angular CLI Commands:
 11. npm run test -- to run unit test cases
 12. npm run e2e -- to run automation test cases
 13: npm run lint -- to display all linting errors
-
+14. ng eject -- gives the webpack config file to us. 
+15. npm install @angular/animations@latest @angular/common@latest @angular/compiler@latest @angular/core@latest @angular/forms@latest @angular/http@latest @angular/platform-browser@latest @angular/platform-browser-dynamic@latest @angular/router@latest core-js@latest rxjs@latest zone.js@latest --save
+To upgrade the angular to latest version.

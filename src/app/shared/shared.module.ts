@@ -8,13 +8,16 @@ import { NamePipe } from '../custom/name.pipe';
 import { HeaderComponent } from '../header/header.component';
 import { EmployeeSearchPipe } from '../custom/employee-search.pipe';
 import { HoverDirective } from '../directive/hover.directive';
+import {MatInputModule , MatButtonModule} from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [HeaderComponent,NamePipe,EmployeeSearchPipe,HoverDirective],
   exports: [
@@ -25,7 +28,9 @@ import { HoverDirective } from '../directive/hover.directive';
     HeaderComponent,
     NamePipe,
     EmployeeSearchPipe,
-    HoverDirective
+    HoverDirective,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class SharedModule { }
