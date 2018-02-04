@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component , Inject } from '@angular/core';
+import { IValueProvider } from './service/valueprovider/ivalueprovider';
+import { VALUE_CONFIG } from './service/valueprovider/valueprovider';
 // import { StudentService } from './service/student/student.service';
 import { LoggerService } from './service/logger/logger.service';
 
@@ -16,7 +17,11 @@ export class AppComponent {
   constructor(
     // private studentService: StudentService,
     private loggerService: LoggerService,
-    public loginService: LoginService) { }
+    public loginService: LoginService,
+    @Inject(VALUE_CONFIG) private valueConfig:IValueProvider  ) { 
+
+      console.log(this.valueConfig);
+    }
 
   addStudent() {
     this.loggerService.log();

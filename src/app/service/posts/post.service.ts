@@ -9,7 +9,9 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class PostService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, isLoggedIn: boolean) { 
+    console.log(isLoggedIn);
+  }
 
   getPosts(): Observable<Posts[]> {
     return this.http.get<Posts[]>('https://jsonplaceholder.typicode.com/posts', {

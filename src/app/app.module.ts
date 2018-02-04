@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { RoutingModule } from './routing/routing.module';
 import { StudentModule } from './student/student.module';
@@ -31,6 +31,10 @@ import { AuthGuard } from './service/auth/auth.guard';
 import { PostResolveGuard } from './service/posts/post-resolve.guard';
 import { PostService } from './service/posts/post.service';
 import { PasswordValidatorDirective } from './directive/password-validator.directive';
+
+import { VALUE_CONFIG, VALUE_CONSTANTS } from './service/valueprovider/valueprovider';
+
+import { postFactory } from './service/posts/post-service-factory';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,8 @@ import { PasswordValidatorDirective } from './directive/password-validator.direc
     // { provide: StudentService, useClass: StudentService },
     { provide: LoggerService, useClass: DbloggerService },
     LoginService, AuthGuard, PostResolveGuard, PostService,
+    { provide: PostService, useFactory: postFactory, deps: [ HttpClient, LoginService] },
+    { provide: VALUE_CONFIG, useValue: VALUE_CONSTANTS },
     { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })

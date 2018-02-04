@@ -26,3 +26,11 @@ only one instance of service will be available for entire service.
 1. When we register a service using module the service is singleton.
 2.  we can register the service with component, so it won't be available for 
 other component,but it will be available for its child component.
+
+
+Value Provider:
+When we need some constants to be used as a service.
+
+Factory:
+
+
